@@ -149,7 +149,7 @@ Sua interface web facilita a gestão de dados e dá autonomia aos usuários dess
 </details>
 <details><summary>OracleBD</summary>
 
- > É o SGBD da Oracle, o mais utilizado em aplicações corporativas, lançado em meados dos anos 70, é multiplataforma e possui licença comercial.<br/>Foi usado para estruturar o modelo de dados relacional da aplicação, além disso foram criadas procedures e triggers.
+ > É o SGBD da Oracle, o mais utilizado em aplicações corporativas, lançado em meados dos anos 70, é multiplataforma e possui licença comercial.<br/>Foi usado para estruturar o modelo de dados relacional da aplicação, além disso foram criadas procedures e triggers no SGBD.
 
 </details>
 <br/>
