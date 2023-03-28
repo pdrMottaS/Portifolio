@@ -139,17 +139,17 @@ Sua interface web facilita a gestão de dados e dá autonomia aos usuários dess
 ### Tecnologias adotadas na solução
 <details><summary>Vue</summary>
 
- > o Thymeleaf permite que desenvolvedores incorporem código Java em páginas HTML e também utilizem as principais características da linguagem em seus templates.<br/>Nesse projeto foi usado para criar os templates do frontend com HTML, CSS e Javascript
+ > Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e aplicativos de página única.<br/>No contexto do projeto foi usado para criar o frontend, com o padrão de gerenciamento de estado do vuex e manipulação de imagens com a biblioteca konva.
 
 </details>
 <details><summary>Spring Boot</summary>
 
- > Spring Boot é uma estrutura da Web Java baseada em microsserviços de código aberto oferecida pela Spring, especialmente útil para engenheiros de software que desenvolvem aplicativos da Web e microsserviços.<br/>Foi usado para desenvolver uma API e implementar regras de negócio da aplicação
+ > Spring Boot é uma estrutura da Web Java baseada em microsserviços de código aberto oferecida pela Spring, especialmente útil para engenheiros de software que desenvolvem aplicativos da Web e microsserviços.<br/>Foi usado para desenvolver uma API RESTFUL com a implementação do Spring Security, fornecendo accesso seguro aos dados sensíveis.
 
 </details>
 <details><summary>OracleBD</summary>
 
- > É o SGBD da Oracle, o mais utilizado em aplicações corporativas, lançado em meados dos anos 70, é multiplataforma e possui licença comercial.<br/>Foi usado para estruturar o modelo de dados relacional da aplicação.
+ > É o SGBD da Oracle, o mais utilizado em aplicações corporativas, lançado em meados dos anos 70, é multiplataforma e possui licença comercial.<br/>Foi usado para estruturar o modelo de dados relacional da aplicação, além disso foram criadas procedures e triggers.
 
 </details>
 <br/>
