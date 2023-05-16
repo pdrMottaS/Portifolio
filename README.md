@@ -41,7 +41,7 @@ Trabalhei em todos os processos de desenvolvimento, entre elas se destacam:
  > Setup da rede:
  ```c++
     /*conexão wifi*/
-    connectWifi("Cembranelli","eunaosei");
+    connectWifi(<WIFI>,<Password>);
     /*setup das variávies do bd*/
     Firebase.begin("https://projeto-smartkey.firebaseio.com/", "O66MUynB7ndUBrpQqiqqDUYmTQCDTbj45rG5ZHZF");
     Firebase.setString(firebaseData, "casa%2001/sala", "true");
