@@ -125,7 +125,7 @@ Desenvolver um ERP para administrar motoristas, veículos e suas respectivas jor
 Fui responsável pelo backend da aplicação, criando uma API Rest com spring boot, além disso trabalhei com algumas funcionalidades do frontend, principalmente no consumo do serviço de backend.
 <details><summary>Configurações de segurança com Spring security</summary>
 
- > Um dos principais tópicos foi a segurança da aplicação,
+ > Um dos principais tópicos foi a segurança da aplicação e suas rotas, para isso foi escolhido a autenticação com jwt (Jswn Web Token), o arquivo abaixo define uma série de configurações de segurança para a aplicação. 
 ```java
 @Configuration
 @EnableWebSecurity
@@ -165,12 +165,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 }
 ```
- > A classe acima define a criptografia de senhas na função "passwordEncoder", o gerenciamento de autenticação para criar o token JWT e a configuração de rotas públicas e privadas no método "configure", sendo que a única rota pública é a rota de autenticação que pode ser encontrado no endpoint "/session"
+ > A classe acima define a criptografia de senhas na função "passwordEncoder", o gerenciamento de autenticação para criar o token JWT e a configuração de rotas públicas e privadas no método "configure", sendo que a única rota pública é a rota de autenticação que pode ser encontrado no endpoint "/session", outra configuração importante é o comando "addFilterBefore" que define que toda rota deve passar pelo jwtFilter antes de realmente executar uma função.
 
 </details>
 <details><summary>Middleware para verificação de JWT</summary>
 
- > É muito importante que antes de cada requisição o jwt enviado seja verificado antes que alguma informação seja retornada
+ > Como explicado na demonstração anterior, toda requisição deveria passar pelo jwtFilter (middleware) antes de realmente executar alguma função. Além disso, caso houvessem erros, o middleware deveria interromper a requisição.
  ```java
 public class JWTFilter extends OncePerRequestFilter{
 
