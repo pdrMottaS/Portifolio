@@ -439,3 +439,109 @@ Outro desafio foi o uso do Oracle Cloud, já que foi minha primeira vez usando u
  - Criação de servidor linux na Oracle cloud: sei fazer com autonomia;
 
 <br/><br/>
+
+## API 5º Semestre: Cloud-In
+<br/>
+
+### Parceiro Acadêmico
+Mid-All
+
+![image](https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png)
+##### *Figura 03. MidAll*
+
+### Visão do Projeto
+
+<br/>
+
+### Tecnologias adotadas na solução
+<details><summary>Flask</summary>
+
+ > Flask
+
+</details>
+<details><summary>Github Actions</summary>
+
+ > GitHub Actions
+
+</details>
+<details><summary>AWS</summary>
+
+ > AWS
+
+</details>
+<br/>
+
+### Contribuições Pessoais
+Nesse projeto atuei como PO, porém devido ao tamanho reduzido da equipe, acabei desenvolvendo features no backend e frontend, o maior problema foi desenvolver as telas dinâmicas e o uso da biblioteca konva para desenhos em canvas, além disso, o uso de vuex para persistencia de dados.
+
+<details><summary>Desenho dentro do canvas</summary>
+
+ > A cada vez que o usuário clicava dentro da tag canvas uma função era disparada para adicionar as coordenadas do formato desenhado para uma array local e em seguida ser armazenada no banco de dados
+ ```javascript
+ draw(evt){
+  const stage = evt.target.getStage();
+  const pos = stage.getPointerPosition();
+  const nl = {
+    x:pos.x,
+    y:pos.y,
+    height: this.tamanho,
+    width: (this.forma=="alongado")?(this.tamanho*3):this.tamanho,
+    fill:this.color,
+    type:this.forma,
+    info:{
+        w:null,
+        h:null,
+        d:null
+    }
+  }
+  if(this.forma=="isolado"){
+      nl['radius']=this.tamanho/2
+  }
+  this.layers[this.forma].push(nl)
+}
+ ```
+ > Na função acima a função captura a posição cartesiana do click do mouse em relação a área da tag canvas, dessa forma é possível manter as layers salvas.Após o button com a ação de submit era disparado, através do comando dispatch do vuex e armazenado na state para futura requisição no backend e armazenamento no banco de dados
+
+</details>
+
+<details><summary>Profile no Spring Boot</summary>
+
+ > Dentro do Spring boot é possível definir profiles (configurações pré definidas), com o intuito de não precisar fazer alterações recorrentes na configuração, nesse projeto foi usado para a definição do DB de produção (Oracle Cloud) e DB dev (docker local)
+ ```
+ spring.h2.console.enabled=false
+
+spring.datasource.url=jdbc:oracle:thin:@<database_hostname> ?TNS_ADMIN=<path_to_wallet>
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect
+ ```
+ > A configuração é a de produção com o nome "application-prod.properties", a conexão com o banco é feita via tns e com driver thin (Driver OCI: conexão nativa com a database, Driver thin: Usa Java sockets para conexão com a database)
+```
+spring.datasource.url=jdbc:oracle:thin:@<host>:1521/<database>
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.jpa.hibernate.ddl-auto=update
+```
+ > A configuração é a de produção com o nome "application-dev.properties", a conexão com o banco em um container docker na máquina local.
+ > Dentro do arquivo "application.properties", é definido qual profile será executado quando a aplicação iniciar
+ ```
+ spring.profiles.active = prod
+ ```
+</details>
+
+</br>
+
+### Aprendizado efetivo HS
+Durante esse projeto exerci pela primeira vez a função de PO (product Owner), um dos grandes desafios foi entender a dor do cliente e transformar em story cards que realmente entregavam valor. Com esse desafio aprendi a fazer perguntas mais pontuais para conseguir requisitos.
+
+Outro desafio foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem e a documentação é escassa e com vocabulário mais complicado, meu conhecimento prévio de linux foi essencial para conseguir configurar o banco de dados e o servidor linux para a aplicação JAVA.
+
+ - Configurar banco de dados Oracle na Oracle cloud: sei fazer com autonomia;
+ - Conversa com cliente: sei fazer com autonomia;
+ - Criação de servidor linux na Oracle cloud: sei fazer com autonomia;
+
+<br/><br/>
+
