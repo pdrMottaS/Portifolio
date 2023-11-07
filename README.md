@@ -450,98 +450,118 @@ Mid-All
 ##### *Figura 03. MidAll*
 
 ### Visão do Projeto
-
+O software Cloud-In é um aplicativo orquestrador para transferência automática de arquivos entre sistemas de armazenamento online. Através de sua interface minimalista e interativa, o usuário pode cadastrar suas credenciais e configurar as transferências conforme sua necessidade, iniciando a jornada de download e upload entre os storages.
 <br/>
 
 ### Tecnologias adotadas na solução
 <details><summary>Flask</summary>
 
- > Flask
+ > Flask é um micro framework que utiliza a linguagem Python para criar aplicativos Web.<br/>No contexto da aplicação, foi usada para a criação do microsserviço backend que faz as transferências entre os drives.
 
 </details>
 <details><summary>Github Actions</summary>
 
- > GitHub Actions
+ > GitHub Actions é um orquestrador de workflows para repositórios do Github.<br/>Na aplicação, foi usada para crias fluxos de CI e testes.
 
 </details>
 <details><summary>AWS</summary>
 
- > AWS
+ > A AWS (Amazon Web Services) é um serviço de computação em nuvem desenvolvido pela Amazon.<br/>Foi usado para criação de ambientes para deploy da aplicação backend, fontend e banco de dados com os serviços EC2, IAM e S3
 
 </details>
 <br/>
 
 ### Contribuições Pessoais
-Nesse projeto atuei como PO, porém devido ao tamanho reduzido da equipe, acabei desenvolvendo features no backend e frontend, o maior problema foi desenvolver as telas dinâmicas e o uso da biblioteca konva para desenhos em canvas, além disso, o uso de vuex para persistencia de dados.
+Nesse projeto atuei como Scrum Master, organizando as Sprints e tasks de cada integrante, além disso, trabalhei diretamente no desenvolvimento do backend da aplicação e integrações com S3 e Google Drive.
 
-<details><summary>Desenho dentro do canvas</summary>
+<details><summary>Job para operações de arquivos</summary>
 
- > A cada vez que o usuário clicava dentro da tag canvas uma função era disparada para adicionar as coordenadas do formato desenhado para uma array local e em seguida ser armazenada no banco de dados
- ```javascript
- draw(evt){
-  const stage = evt.target.getStage();
-  const pos = stage.getPointerPosition();
-  const nl = {
-    x:pos.x,
-    y:pos.y,
-    height: this.tamanho,
-    width: (this.forma=="alongado")?(this.tamanho*3):this.tamanho,
-    fill:this.color,
-    type:this.forma,
-    info:{
-        w:null,
-        h:null,
-        d:null
-    }
-  }
-  if(this.forma=="isolado"){
-      nl['radius']=this.tamanho/2
-  }
-  this.layers[this.forma].push(nl)
-}
+ > O usuário poderia definir a frequência que o programa procura os arquivos no drive de origem e a quantidade de banda utilizada, as configurações ficam em um arquivo JSON.
+ ```python
+@scheduler.scheduled_job("interval", seconds=int(load_json_file()["JOB_TIME"]))
+@limit_bandwidth(int(getBandwidth() * (int(load_json_file()["BAND"]) / 100)))
+def myFunction():
+with app.app_context():
+    schema = TransactionSchema()
+    query = Config().query.all()
+    for i in query:
+	if i.origin == "google":
+	    originService = GoogleService(i.originToken)
+	elif i.origin == "s3":
+	    originService = s3Service(i.originToken)
+	if i.destiny == "google":
+	    destinyService = GoogleService(i.destinyToken)
+	elif i.destiny == "s3":
+	    destinyService = s3Service(i.destinyToken)
+	new_files = originService.files_by_folder(i.originFolder)
+	if new_files > 0:
+	    transaction = new_transaction(i)
+	    msg = format_sse(
+		data={"config": i.id, "transaction": schema.dump(transaction)},
+		event="newTransaction",
+	    )
+	    announcer.announce(msg=msg)
+	    try:
+		files = make_transaction(i, originService, destinyService)
+		if len(files) <= 0:
+		    transaction = update_transaction(transaction, "Erro", [])
+		else:
+		    transaction = update_transaction(
+			transaction, "Concluido", files
+		    )
+	    except Exception as e:
+		transaction = update_transaction(transaction, "Erro", [])
+
+	    msg = format_sse(
+		data={"config": i.id, "transaction": schema.dump(transaction)},
+		event="updateTransaction",
+	    )
+	    announcer.announce(msg=msg)
  ```
- > Na função acima a função captura a posição cartesiana do click do mouse em relação a área da tag canvas, dessa forma é possível manter as layers salvas.Após o button com a ação de submit era disparado, através do comando dispatch do vuex e armazenado na state para futura requisição no backend e armazenamento no banco de dados
-
 </details>
 
-<details><summary>Profile no Spring Boot</summary>
+<details><summary>Integração com Google Drive</summary>
 
- > Dentro do Spring boot é possível definir profiles (configurações pré definidas), com o intuito de não precisar fazer alterações recorrentes na configuração, nesse projeto foi usado para a definição do DB de produção (Oracle Cloud) e DB dev (docker local)
- ```
- spring.h2.console.enabled=false
+ > Para as operações de arquivo (download, upload, listagem, etc) foi criado um service para cada drive.
+ ```python
+class GoogleService:
+    token = ""
 
-spring.datasource.url=jdbc:oracle:thin:@<database_hostname> ?TNS_ADMIN=<path_to_wallet>
-spring.datasource.username=<username>
-spring.datasource.password=<password>
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect
+    def __init__(self, refreshToken: str):
+        data = {
+            "refresh_token": refreshToken,
+            "client_id": "532089225272-1im33klerc0hmvspgo6mh08aobithavt.apps.googleusercontent.com",
+            "client_secret": "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",
+            "grant_type": "refresh_token",
+        }
+
+        req = requests.post("https://oauth2.googleapis.com/token", json=data).json()
+
+        self.token = req["access_token"]
+
+    def files_by_folder(self, folder):
+        headers = {"Authorization": f"Bearer {self.token}"}
+        params = {"q": f"'{folder}' in parents and trashed = false", "fields": "*"}
+        req = requests.get(
+            "https://www.googleapis.com/drive/v3/files", headers=headers, params=params
+        )
+
+        num_of_files = len(req.json()["files"])
+
+        return num_of_files
  ```
- > A configuração é a de produção com o nome "application-prod.properties", a conexão com o banco é feita via tns e com driver thin (Driver OCI: conexão nativa com a database, Driver thin: Usa Java sockets para conexão com a database)
-```
-spring.datasource.url=jdbc:oracle:thin:@<host>:1521/<database>
-spring.datasource.username=<username>
-spring.datasource.password=<password>
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-spring.jpa.hibernate.ddl-auto=update
-```
- > A configuração é a de produção com o nome "application-dev.properties", a conexão com o banco em um container docker na máquina local.
- > Dentro do arquivo "application.properties", é definido qual profile será executado quando a aplicação iniciar
- ```
- spring.profiles.active = prod
- ```
+> Cada vez que a classe era instanciada, ou seja, uma nova transferência inicia, o token passa pelo processo de refresh.
+
 </details>
 
 </br>
 
 ### Aprendizado efetivo HS
-Durante esse projeto exerci pela primeira vez a função de PO (product Owner), um dos grandes desafios foi entender a dor do cliente e transformar em story cards que realmente entregavam valor. Com esse desafio aprendi a fazer perguntas mais pontuais para conseguir requisitos.
+Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe, além disso, um ponto focal no projeto era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
 
-Outro desafio foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem e a documentação é escassa e com vocabulário mais complicado, meu conhecimento prévio de linux foi essencial para conseguir configurar o banco de dados e o servidor linux para a aplicação JAVA.
-
- - Configurar banco de dados Oracle na Oracle cloud: sei fazer com autonomia;
- - Conversa com cliente: sei fazer com autonomia;
- - Criação de servidor linux na Oracle cloud: sei fazer com autonomia;
+ - Serviços básicos AWS: sei fazer com autonomia;
+ - Autenticação em APIs com OAuth2.0: sei fazer com autonomia;
+ - Programação paralela em python: sei fazer com autonomia;
 
 <br/><br/>
 
