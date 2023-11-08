@@ -336,7 +336,7 @@ Em relação ao "backend", o grande desafio foi o banco de dados Oracle em um co
 Subiter
 
 ![image](https://user-images.githubusercontent.com/58821700/228385162-80ac6bda-4e3b-433a-819b-ea91db32a205.png)
-##### *Figura 03. Subiter*
+##### *Figura 04. Subiter*
 
 ### Visão do Projeto
 Sistema ERP que visa gerenciar e controlar dados, afim de reduzir custos, facilitar tomadas de decisão, otimizar o tempo de atendimento de chamados e aprimorar o solucionamento destes. É composta por níveis de usuários, onde o administrador terá controle sobre todas as funcionalidades existentes, dentre elas o cadastro, edição e exclusão de outros usuários; o suporte ficará responsável pelo CRUD de falhas e soluções genéricas e CRUD de equipamentos; o cliente trará o problema para o suporte e, este ficará responsável por gerenciar o chamado e resolvê-los.
@@ -565,3 +565,127 @@ Durante esse projeto exerci a função de SM, reforçando atividades de organiza
 
 <br/><br/>
 
+## API 6º Semestre: POP
+<br/>
+
+### Parceiro Acadêmico
+Visiona
+
+![image](https://github.com/pdrMottaS/Portifolio/assets/58821700/762c378d-3f43-4cc6-9979-795ab1b90d23)
+##### *Figura 05. Visiona*
+
+### Visão do Projeto
+O software Cloud-In é um aplicativo orquestrador para transferência automática de arquivos entre sistemas de armazenamento online. Através de sua interface minimalista e interativa, o usuário pode cadastrar suas credenciais e configurar as transferências conforme sua necessidade, iniciando a jornada de download e upload entre os storages.
+<br/>
+
+### Tecnologias adotadas na solução
+<details><summary>Flask</summary>
+
+ > Flask é um micro framework que utiliza a linguagem Python para criar aplicativos Web.<br/>No contexto da aplicação, foi usada para a criação do microsserviço backend que faz as transferências entre os drives.
+
+</details>
+<details><summary>Github Actions</summary>
+
+ > GitHub Actions é um orquestrador de workflows para repositórios do Github.<br/>Na aplicação, foi usada para crias fluxos de CI e testes.
+
+</details>
+<details><summary>AWS</summary>
+
+ > A AWS (Amazon Web Services) é um serviço de computação em nuvem desenvolvido pela Amazon.<br/>Foi usado para criação de ambientes para deploy da aplicação backend, fontend e banco de dados com os serviços EC2, IAM e S3
+
+</details>
+<br/>
+
+### Contribuições Pessoais
+Nesse projeto atuei como Scrum Master, organizando as Sprints e tasks de cada integrante, além disso, trabalhei diretamente no desenvolvimento do backend da aplicação e integrações com S3 e Google Drive.
+
+<details><summary>Job para operações de arquivos</summary>
+
+ > O usuário poderia definir a frequência que o programa procura os arquivos no drive de origem e a quantidade de banda utilizada, as configurações ficam em um arquivo JSON.
+ ```python
+@scheduler.scheduled_job("interval", seconds=int(load_json_file()["JOB_TIME"]))
+@limit_bandwidth(int(getBandwidth() * (int(load_json_file()["BAND"]) / 100)))
+def myFunction():
+with app.app_context():
+    schema = TransactionSchema()
+    query = Config().query.all()
+    for i in query:
+	if i.origin == "google":
+	    originService = GoogleService(i.originToken)
+	elif i.origin == "s3":
+	    originService = s3Service(i.originToken)
+	if i.destiny == "google":
+	    destinyService = GoogleService(i.destinyToken)
+	elif i.destiny == "s3":
+	    destinyService = s3Service(i.destinyToken)
+	new_files = originService.files_by_folder(i.originFolder)
+	if new_files > 0:
+	    transaction = new_transaction(i)
+	    msg = format_sse(
+		data={"config": i.id, "transaction": schema.dump(transaction)},
+		event="newTransaction",
+	    )
+	    announcer.announce(msg=msg)
+	    try:
+		files = make_transaction(i, originService, destinyService)
+		if len(files) <= 0:
+		    transaction = update_transaction(transaction, "Erro", [])
+		else:
+		    transaction = update_transaction(
+			transaction, "Concluido", files
+		    )
+	    except Exception as e:
+		transaction = update_transaction(transaction, "Erro", [])
+
+	    msg = format_sse(
+		data={"config": i.id, "transaction": schema.dump(transaction)},
+		event="updateTransaction",
+	    )
+	    announcer.announce(msg=msg)
+ ```
+</details>
+
+<details><summary>Integração com Google Drive</summary>
+
+ > Para as operações de arquivo (download, upload, listagem, etc) foi criado um service para cada drive.
+ ```python
+class GoogleService:
+    token = ""
+
+    def __init__(self, refreshToken: str):
+        data = {
+            "refresh_token": refreshToken,
+            "client_id": "532089225272-1im33klerc0hmvspgo6mh08aobithavt.apps.googleusercontent.com",
+            "client_secret": "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",
+            "grant_type": "refresh_token",
+        }
+
+        req = requests.post("https://oauth2.googleapis.com/token", json=data).json()
+
+        self.token = req["access_token"]
+
+    def files_by_folder(self, folder):
+        headers = {"Authorization": f"Bearer {self.token}"}
+        params = {"q": f"'{folder}' in parents and trashed = false", "fields": "*"}
+        req = requests.get(
+            "https://www.googleapis.com/drive/v3/files", headers=headers, params=params
+        )
+
+        num_of_files = len(req.json()["files"])
+
+        return num_of_files
+ ```
+> Cada vez que a classe era instanciada, ou seja, uma nova transferência inicia, o token passa pelo processo de refresh.
+
+</details>
+
+</br>
+
+### Aprendizado efetivo HS
+Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe, além disso, um ponto focal no projeto era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
+
+ - Serviços básicos AWS: sei fazer com autonomia;
+ - Autenticação em APIs com OAuth2.0: sei fazer com autonomia;
+ - Programação paralela em python: sei fazer com autonomia;
+
+<br/><br/>
