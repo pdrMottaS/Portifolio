@@ -7,7 +7,7 @@
 ### Parceiro Acadêmico
 Fatec Prof. Jessen Vidal (proposta realizada pelo docente responsável pela disciplina que ordenou o projeto)
 
-![image](https://user-images.githubusercontent.com/74321890/221617740-afbc3809-af92-43e8-bc11-698eeffb4bf4.png)
+<img src="https://user-images.githubusercontent.com/74321890/221617740-afbc3809-af92-43e8-bc11-698eeffb4bf4.png" alt="drawing" width="300" height="200"/>
 ##### *Figura 01. FATEC*
 
 ### Visão do Projeto
@@ -97,7 +97,7 @@ Além disso foi meu primeiro contato com a metodologia SCRUM, com esse desafio c
 ### Parceiro Acadêmico
 IACIT
 
-![image](https://user-images.githubusercontent.com/58821700/228378287-21d8de63-e356-442e-b430-f408a92511ca.png)
+<img src="https://user-images.githubusercontent.com/58821700/228378287-21d8de63-e356-442e-b430-f408a92511ca.png" alt="drawing" width="300" height="200"/>
 ##### *Figura 02. IACIT*
 
 ### Visão do Projeto
@@ -224,7 +224,7 @@ Além disso, foi minha primeira vez na função de SCRUM MASTER, tive a responsa
 ### Parceiro Acadêmico
 MidAll
 
-![image](https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png)
+<img src="https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png" alt="drawing" width="300" height="200"/>
 ##### *Figura 03. MidAll*
 
 ### Visão do Projeto
@@ -335,7 +335,8 @@ Em relação ao "backend", o grande desafio foi o banco de dados Oracle em um co
 ### Parceiro Acadêmico
 Subiter
 
-![image](https://user-images.githubusercontent.com/58821700/228385162-80ac6bda-4e3b-433a-819b-ea91db32a205.png)
+<img src="https://github.com/pdrMottaS/Portifolio/assets/58821700/ea6a22bf-e487-4c7b-be9a-a62ba65377ef" alt="drawing" width="300" height="200"/>
+
 ##### *Figura 04. Subiter*
 
 ### Visão do Projeto
@@ -446,7 +447,9 @@ Outro desafio foi o uso do Oracle Cloud, já que foi minha primeira vez usando u
 ### Parceiro Acadêmico
 Mid-All
 
-![image](https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png)
+
+<img src="https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png" alt="drawing" width="300" height="200"/>
+
 ##### *Figura 03. MidAll*
 
 ### Visão do Projeto
@@ -571,7 +574,9 @@ Durante esse projeto exerci a função de SM, reforçando atividades de organiza
 ### Parceiro Acadêmico
 Visiona
 
-![image](https://github.com/pdrMottaS/Portifolio/assets/58821700/762c378d-3f43-4cc6-9979-795ab1b90d23)
+
+<img src="https://github.com/pdrMottaS/Portifolio/assets/58821700/762c378d-3f43-4cc6-9979-795ab1b90d23" alt="drawing" width="300" height="200"/>
+
 ##### *Figura 05. Visiona*
 
 ### Visão do Projeto
