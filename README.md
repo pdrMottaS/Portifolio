@@ -575,117 +575,140 @@ Visiona
 ##### *Figura 05. Visiona*
 
 ### Visão do Projeto
-O software Cloud-In é um aplicativo orquestrador para transferência automática de arquivos entre sistemas de armazenamento online. Através de sua interface minimalista e interativa, o usuário pode cadastrar suas credenciais e configurar as transferências conforme sua necessidade, iniciando a jornada de download e upload entre os storages.
+O POP é uma plataforma de monitoramento das atividades agropecuárias cadastradas no Proagro, o projeto conta com ferramentas de machine learning para previsão de indices NDVI e integração com ferramentas meteorológicas.
 <br/>
 
 ### Tecnologias adotadas na solução
-<details><summary>Flask</summary>
+<details><summary>FastAPI</summary>
 
- > Flask é um micro framework que utiliza a linguagem Python para criar aplicativos Web.<br/>No contexto da aplicação, foi usada para a criação do microsserviço backend que faz as transferências entre os drives.
-
-</details>
-<details><summary>Github Actions</summary>
-
- > GitHub Actions é um orquestrador de workflows para repositórios do Github.<br/>Na aplicação, foi usada para crias fluxos de CI e testes.
+ > astAPI é uma estrutura web moderna para construção de APIs RESTful em Python.<br/>No contexto da aplicação, foi usada para a criação do microsserviço backend que serve informações geográficas, administrativas e predição das glebas
 
 </details>
-<details><summary>AWS</summary>
+<details><summary>Postgis</summary>
 
- > A AWS (Amazon Web Services) é um serviço de computação em nuvem desenvolvido pela Amazon.<br/>Foi usado para criação de ambientes para deploy da aplicação backend, fontend e banco de dados com os serviços EC2, IAM e S3
+ > O PostGIS é uma extensão espacial gratuita e de código fonte livre. Sua construção é feita sobre o sistema de gerenciamento de banco de dados objeto relacional PostgreSQL.<br/>A ferramenta é o banco de dados relacional do projeto, armazenando os dados tratados que foram extraídos da base do Proagro.
+
+</details>
+<details><summary>QGis</summary>
+
+ > QGIS é um software livre com código-fonte aberto, multiplataforma de sistema de informação geográfica que permite a visualização, edição e análise de dados georreferenciados.<br/>No projeto foi utilizado como frontend para análise visual das layers geográficas, relatórios e informações. 
 
 </details>
 <br/>
 
 ### Contribuições Pessoais
-Nesse projeto atuei como Scrum Master, organizando as Sprints e tasks de cada integrante, além disso, trabalhei diretamente no desenvolvimento do backend da aplicação e integrações com S3 e Google Drive.
+Minha atuação nesse projeto foi no papel de DEV, com foco nas funcionalidades de extração e tratamento de dados, desenvolvimento da interface QGis e desenvolvimento do modelo de predição.
 
-<details><summary>Job para operações de arquivos</summary>
+<details><summary>Modelo de Série Temporal</summary>
 
- > O usuário poderia definir a frequência que o programa procura os arquivos no drive de origem e a quantidade de banda utilizada, as configurações ficam em um arquivo JSON.
+ > Após a extração dos dados da própria Visiona, foi desenvolvido um modelo de série temporal com o modelo SARIMAX usando os dados de timestamp e índice NDVI.
  ```python
-@scheduler.scheduled_job("interval", seconds=int(load_json_file()["JOB_TIME"]))
-@limit_bandwidth(int(getBandwidth() * (int(load_json_file()["BAND"]) / 100)))
-def myFunction():
-with app.app_context():
-    schema = TransactionSchema()
-    query = Config().query.all()
-    for i in query:
-	if i.origin == "google":
-	    originService = GoogleService(i.originToken)
-	elif i.origin == "s3":
-	    originService = s3Service(i.originToken)
-	if i.destiny == "google":
-	    destinyService = GoogleService(i.destinyToken)
-	elif i.destiny == "s3":
-	    destinyService = s3Service(i.destinyToken)
-	new_files = originService.files_by_folder(i.originFolder)
-	if new_files > 0:
-	    transaction = new_transaction(i)
-	    msg = format_sse(
-		data={"config": i.id, "transaction": schema.dump(transaction)},
-		event="newTransaction",
-	    )
-	    announcer.announce(msg=msg)
-	    try:
-		files = make_transaction(i, originService, destinyService)
-		if len(files) <= 0:
-		    transaction = update_transaction(transaction, "Erro", [])
-		else:
-		    transaction = update_transaction(
-			transaction, "Concluido", files
-		    )
-	    except Exception as e:
-		transaction = update_transaction(transaction, "Erro", [])
+import json
+import pandas as pd
+import os
 
-	    msg = format_sse(
-		data={"config": i.id, "transaction": schema.dump(transaction)},
-		event="updateTransaction",
-	    )
-	    announcer.announce(msg=msg)
+# extração dos arquivos
+df = pd.DataFrame()
+for dirname, _, filenames in os.walk('../data/1633/'):
+    for filename in filenames:
+        data = {}
+        with open(os.path.join(dirname, filename),'r') as file:
+            d = json.loads(file.read())
+        data['date'] = d['Indices']['NDVI']['Serie Processada']['Data']
+        data['indices'] = d['Indices']['NDVI']['Serie Processada']['Indice']
+        part = pd.DataFrame(data)
+        part['date'] = pd.to_datetime(part['date'], format='%Y-%m-%d')
+        print(os.path.join(dirname, filename))
+        df = pd.concat([df, part])
+df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+df = df.set_index('date')
+df = df.groupby(df.index).mean()
+df = df.asfreq("W",method='backfill')
+df = df.sort_index()
+
+# separação dos dados de teste e treino 
+steps=10
+X_train = df.loc[:datetime.strptime('2019-02-28', "%Y-%m-%d")]
+X_test = df.loc[datetime.strptime('2019-02-28', "%Y-%m-%d"):datetime.strptime('2019-05-30', "%Y-%m-%d")]
+
+# busca dos melhores parâmetros (p,d,q) e treinamento do modelo
+from pmdarima.arima import auto_arima
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+auto = auto_arima(
+    X_train['indices'],
+    seasonal=True,
+    stationary=True,
+    trace=True, 
+    error_action='ignore', 
+    suppress_warnings=True
+)
+sarima = SARIMAX(X_train['indices'],order=auto.order,seasonal_order=(1,2,1,8),freq='W',enforce_stationarity=True)
+model = sarima.fit()
  ```
+> Mesmo com o uso da função auto_arima para busca automática dos parâmetros, ainda foi necessário trabalhar com os parâmetros sazonais (P,D,Q,s) para melhores resultados.
 </details>
 
-<details><summary>Integração com Google Drive</summary>
+<details><summary>Layer Qgis com glebas</summary>
 
- > Para as operações de arquivo (download, upload, listagem, etc) foi criado um service para cada drive.
+ > Para a renderização dos polígonos com informações armazenados no banco de Dados, para isso foi feito uma query buscando polígonos e dados para filtros.
  ```python
-class GoogleService:
-    token = ""
-
-    def __init__(self, refreshToken: str):
-        data = {
-            "refresh_token": refreshToken,
-            "client_id": "532089225272-1im33klerc0hmvspgo6mh08aobithavt.apps.googleusercontent.com",
-            "client_secret": "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",
-            "grant_type": "refresh_token",
-        }
-
-        req = requests.post("https://oauth2.googleapis.com/token", json=data).json()
-
-        self.token = req["access_token"]
-
-    def files_by_folder(self, folder):
-        headers = {"Authorization": f"Bearer {self.token}"}
-        params = {"q": f"'{folder}' in parents and trashed = false", "fields": "*"}
-        req = requests.get(
-            "https://www.googleapis.com/drive/v3/files", headers=headers, params=params
-        )
-
-        num_of_files = len(req.json()["files"])
-
-        return num_of_files
+uri = QgsDataSourceUri()
+uri.setConnection("localhost", "5432", "postgres", "postgres", "root")
+query = '''select opr.opr_inicio_plantio as inicio_plantio, 
+    opr.opr_fim_plantio as fim_plantio, 
+    opr.opr_inicio_colheita as inicio_colheita, 
+    opr.opr_fim_colheita as fim_colheita, 
+    mun.mun_descricao as municipio, 
+    std.std_descricao as estado, 
+    glb.glb_poligono as gleba, 
+    opr.opr_id as id_operacao, 
+    glb.glb_id as id_gleba 
+    from opr_operacao as opr 
+    inner join mun_municipio as mun 
+    on mun.mun_id = opr.mun_id
+    inner join std_estado as std 
+    on std.std_id = opr.std_id 
+    inner join glb_gleba as glb 
+    on glb.opr_id = opr.opr_id'''
+uri.setDataSource('', f'({query})', 'gleba','','id_gleba')
+layer = QgsVectorLayer(uri.uri(), "Glebas", "postgres")
+QgsProject.instance().addMapLayer(layer)
+symbol = QgsSymbol.defaultSymbol(layer.geometryType())
+symbol.symbolLayer(0).setFillColor(QColor(255, 255, 255, 100))
+symbol.symbolLayer(0).setStrokeColor(QColor(255, 255, 255, 100))
+symbol.symbolLayer(0).setStrokeWidth(2.0)
+renderer = QgsSingleSymbolRenderer(symbol)
+layer.setRenderer(renderer)
+layer.triggerRepaint()
  ```
-> Cada vez que a classe era instanciada, ou seja, uma nova transferência inicia, o token passa pelo processo de refresh.
+> A layer criada no Qgis pode ser manipulada por todas as ferramentas do QGis e com ferramentas personalizadas, na aplicação foi desenvolvida uma ferramenta customizada para renderização das informações e gráficos.
+```python
+class identifyGleba(mapTool):
+
+    def __init__(self, canvas: QgsMapCanvas,layer:QgsMapLayer,label: str):
+        super().__init__(canvas, label)
+        self.layer = layer
+        self.map_tool = identifyDecorator(self)
+
+    def canvasPressEvent(self, event):
+        x, y = event.pos().x(), event.pos().y()
+        results = self.map_tool.identify(x,y,[self.layer],True)
+        for item in results:
+            feature = item.mFeature
+            dlg = detailDialog(opr=feature[6],gleba=feature[7],inicio=feature[1],fim=feature[3])
+            dlg.show()
+            result = dlg.exec_()
+```
 
 </details>
 
 </br>
 
 ### Aprendizado efetivo HS
-Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe, além disso, um ponto focal no projeto era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
+Nesse projeto tive bastante contato com ferramentas de tratamento de dados com pandas e modelos de série temporal como SARIMAX. Além disso, um grande desafio foi o uso de dados geográficos, já que fiquei responsável pela modelagem e manipulação usando Postgis e Geopandas.
 
- - Serviços básicos AWS: sei fazer com autonomia;
- - Autenticação em APIs com OAuth2.0: sei fazer com autonomia;
- - Programação paralela em python: sei fazer com autonomia;
+- Desenvolvimento de plugins no Qgis: Sei fazer com autônomia;
+- Modelagem e manipulação de dados geográficos: Sei fazer com ajuda;
+- Tratamento de dados com Pandas: Sei fazer com autônomia 
 
 <br/><br/>
