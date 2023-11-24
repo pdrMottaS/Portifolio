@@ -518,7 +518,9 @@ O software Cloud-In é um aplicativo orquestrador para transferência automátic
 Nesse projeto atuei como Scrum Master, organizando as Sprints e tasks de cada integrante, além disso, trabalhei diretamente no desenvolvimento do backend da aplicação e integrações com S3 e Google Drive.
 
 <details><summary>Organizações de projeto no Jira</summary>
+	
  > Para a organização do projeto, configurei o Jira para organizações das Sprints, lançamento de horas trabalhadas, relatório burndown para acompanhamento do projeto e tracking das issues no github.
+
 </details>
 
 <details><summary>Job para operações de arquivos</summary>
