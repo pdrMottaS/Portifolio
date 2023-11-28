@@ -1,6 +1,7 @@
 # Pedro Motta Silva
 
 
+
 ## API 1º Semestre: Smart-Key
 <br/>
 
@@ -79,9 +80,7 @@ Trabalhei em todos os processos de desenvolvimento, entre elas se destacam:
 </details>
 <br/>
 
-### Aprendizado efetivo HS
-
-#### Hard-Skills
+### Hard-Skills
 Durante o projeto pude aprender como funciona uma requisição HTTP, já que trabalhei diretamente com a comunicação entre o módulo ESP 8266 e o Realtime database, essa experiência me proporcionou observar como serviços web funcionam.
 
 Também aprendi muito sobre circuitos eletrônicos, principalmente conceitos de elétrica (potência, resistência, etc.) aplicados na prática com o uso da rede elétrica residencial alimentando o circuito de lâmpadas e com a criação da fonte de alimentação com uma fonte de computador.  
@@ -89,11 +88,20 @@ Também aprendi muito sobre circuitos eletrônicos, principalmente conceitos de 
  - Circuitos eletrônicos simples: sei fazer com autônomia;
  - Script de comunicação HTTP: sei fazer com autônomia;
 
-#### Soft-Skills
-Esse projeto foi meu primeiro contato com a metodologia SCRUM, com esse desafio consegui tive meus primeiros passos para entender sobre os papéis de DEV, MASTER e PO. Estar no papel de DEV me ensinou sobre a metodologia de história e entrega de valores, além de desenvolver skills como:
+### Soft-Skills
+Durante minha participação como desenvolvedor nesse projeto, tive a oportunidade de conhecer melhor a metodologia agil e aprimorar diversas soft skills que foram fundamentais para o sucesso do projeto.
 
- - Entrega de resultado: Tive muitas entregas válidas para o projeto.
- - Proatividade: Consegui antecipar diversas tasks e pesquisas de soluções.
+<b>Proatividade:</b>
+
+Uma das habilidades que pude desenvolver e aplicar consistentemente foi a proatividade. Em um ambiente dinâmico, percebi a importância de antecipar desafios e agir proativamente para resolvê-los. Isso foi visível nos desafios que tivemos devido a falta de experiências em circuitos eletrônicos.
+
+<b>Entrega de Valor:</b>
+
+Minhas entregas não ficaram limitadas apenas ao que foi designado, sempre busquei entender a real necessidade e requisitos do cliente, podendo garantir que tudo se encaixava também na expectativa.
+
+<b>Entrega de resultado:</b>
+
+Minha dedicação à entrega de resultados foi evidenciada pela minha capacidade de cumprir prazos e metas estabelecidas. Trabalhei em estreita colaboração com a equipe, assegurando que as entregas fossem feitas de maneira oportuna e com a qualidade desejada. 
 
 <br/><br/>
 
@@ -219,20 +227,27 @@ public class JWTFilter extends OncePerRequestFilter{
 </details>
 <br/>
 
-### Aprendizado efetivo HS
-
-#### Soft-Skills
-Como foi minha primeira vez como SCRUM MASTER, tive que desenvolver habilidades de comunicação para alinhamento da equipe acompanhando o andamento das tarefas pelo burndown, além disso, devido a necessidade de entrega de resultados, me comprometi com o desenvolvimento de funcionalidades.
-
- - Comunicação: Aprendi a me cominicar de forma efetiva tanto para questionar o andamento das tarefas, quanto para esclarecer dúvidas sobre as próprias tarefas.
- - Proatividade: Durante o projeto aprendi a adiantar algumas pesquisas sobre tecnologia para sprints futuras.
- - Organização: Tive a oportunidade de treinar a organização de tasks de acordo com o valor e prioridade.
-
-#### Hard-Skills
+### Hard-Skills
 Durante esse projeto, tive meu primeiro contato com o framework Spring Boot, tive participação em todo o backend, ou seja, entendi passo a passo como criar uma API Restful robusta. Um dos maiores desafios foi a biblioteca Spring security, devido a falta de experiência, não sabia como funcionava uma requisição com um token de autenticação jwt, todo o conhecimento foi adiquirido durante esse projeto, além disso, a criptografia de senha dos usuários era uma novidade para toda a equipe.
 
  - Web Service com Spring Boot: sei fazer com autônomia;
  - Configuração das regras de segurança com Spring Boot security: sei fazer com consulta;
+
+### Soft-Skills
+
+Nesse projeto, tive a oportunidade de contribuir como scrum master pela primeira vez, dessa forma desenvolvi soft skills importantes para a função:
+
+<b>Comunicação:</b>
+
+Assumir o papel de Scrum Master pela primeira vez me desafiou a aprimorar minhas habilidades de comunicação. Foi essencial estabelecer canais claros de comunicação para alinhar a equipe, garantindo que todos entendessem suas responsabilidades e metas. Utilizando o método do burndown, acompanhei o progresso das tarefas e mantive um diálogo constante para garantir que as informações fluíssem livremente. 
+
+<b>Organização:</b>
+
+A experiência como Scrum Master me ofereceu a oportunidade de aprimorar minha habilidade de organização. Ao priorizar as tarefas com base no valor agregado, aprendi a gerenciar as demandas de maneira mais eficiente, garantindo que as funcionalidades essenciais fossem desenvolvidas primeiro.
+
+<b>Proatividade:</b>
+
+Ao longo do projeto, percebi a importância de antecipar as necessidades futuras da equipe. Investi tempo em pesquisas e estudos sobre tecnologias emergentes, visando preparar terreno para sprints subsequentes. 
 
 <br/><br/>
 
@@ -336,23 +351,29 @@ if(condicao.contains("QuantidadeTotal")){
 
 <br/>
 
-### Aprendizado efetivo HS
-
-#### Hard-Skills
+### Hard-Skills
 Nesse projeto aprendi sobre design UI e UX, o desafio de criar uma ferramenta server side fez com que todo o "frontend" fosse criado com HTML, CSS, Javascript e JQuery. Como os inputs do usuário final precisavam ser dinâmicos, aprendi muito sobre eventos em js e sobre como a árvore de elementos DOM funciona e suas propriedades.
 
-Em relação ao "backend", o grande desafio foi o banco de dados Oracle em um container Docker, ja que era meu primeiro contato coma ferramenta. Além disso foi o primeiro projeto que aprendi todo o conceito e caso de uso de DTO e sobre Script Engine para execução de scripts dentro do Java.
+Em relação ao backend, o grande desafio foi o banco de dados Oracle em um container Docker, ja que era meu primeiro contato coma ferramenta. Além disso foi o primeiro projeto que aprendi todo o conceito e caso de uso de DTO e sobre Script Engine para execução de scripts dentro do Java.
 
  - Criação de telas com Javascript e JQuery: sei fazer com autonômia;
  - Uso de DTO em uma aplicação: sei fazer com autonômia;
  - Script Engine: sei fazer com autonômia;
 
-#### Soft-Skills
+### Soft-Skills
 Durante o projeto, muitos desenvolvedores acabaram desistindo, dessa forma desenvolvi novas habilidades para minimizar o gap deixado pela saída de outros integrantes, tais como:
 
- - Autonomia e entrega de resultado: Desenvolver tarefas e tomar algumas decisões de forma autônoma para entrega de resultados com valor.
- - Proatividade: No tempo possível, adiantei algumas tasks e pesquisas para entregar todos os requisitos do projeto.
- - Felxibilidade: Com o número reduzido de desenvolvedores, aprendi a ser flexivel e desenvolver em diversas tecnologias.
+<b>Autonomia e entrega de resultado:</b>
+
+Diante da saída de vários membros da equipe durante o projeto, adquiri a habilidade de operar de forma mais autônoma. Isso envolveu a capacidade de assumir responsabilidades adicionais, tomar decisões pertinentes e conduzir tarefas de maneira independente.
+
+<b>Flexibilidade:</b>
+
+Com o desafio de uma equipe reduzida, desenvolvi uma nova habilidade de ser flexível em relação às tecnologias utilizadas. Esta flexibilidade foi fundamental para garantir que as funcionalidades do projeto continuassem a ser desenvolvidas, mesmo com menos recursos.
+
+<b>Proatividade:</b>
+
+Para minimizar os impactos da saída de membros da equipe, tornei-me proativo na antecipação de tarefas e na realização de pesquisas relevantes para o cumprimento de todos os requisitos do projeto.
 
 <br/><br/>
 
@@ -463,21 +484,27 @@ spring.jpa.hibernate.ddl-auto=update
 
 </br>
 
-### Aprendizado efetivo HS
-
-#### Soft-Skills
-Durante esse projeto exerci pela primeira vez a função de PO (product Owner), um dos grandes desafios foi entender a dor do cliente e transformar em story cards que realmente entregavam valor. Com esse desafio, desenvolvi algumas habilidades, tais como:
- 
- - Comunicação e negociação: A função principal do PO, tendo como foco o entendimento de regra de negócio e requisitos e negociar as entregas com o cliente.
- - Pensamento Crítico e negociação: Aprendi a tomar decisões importantes para cada entrega baseado na dor do cliente.
- - Foco: Com o número reduzido de integrantes do grupo, aprendi a focar as tarefas e o tempo dedicada a elas.
-
-#### Hard-Skills
+### Hard-Skills
 Com o desenvolvimento da solução, um dos principais desafios foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem e a documentação é escassa e com vocabulário mais complicado, meu conhecimento prévio de linux foi essencial para conseguir configurar o banco de dados e o servidor linux para a aplicação JAVA.
 
  - Configurar banco de dados Oracle na Oracle cloud: sei fazer com autonomia;
  - Conversa com cliente: sei fazer com autonomia;
  - Criação de servidor linux na Oracle cloud: sei fazer com autonomia;
+
+### Soft-Skills
+Durante esse projeto exerci pela primeira vez a função de PO (product Owner), um dos grandes desafios foi entender a dor do cliente e transformar em story cards que realmente entregavam valor. Com esse desafio, desenvolvi algumas habilidades:
+ 
+<b>Comunicação e negociação:</b>
+
+A minha função central era compreender profundamente as regras de negócio e os requisitos do cliente. Focando nesse entendimento, aprimorei minhas habilidades de comunicação para traduzir essas necessidades de forma clara e precisa para a equipe de desenvolvimento. Além disso, desempenhei um papel essencial na negociação das entregas com o cliente. Esta habilidade de comunicação e negociação foi crucial para garantir que as expectativas do cliente fossem alinhadas com as entregas realizadas, proporcionando um produto final que atendesse às suas necessidades.
+
+<b>Pensamento Crítico:</b>
+
+Um aspecto fundamental do meu trabalho como PO foi desenvolver um pensamento crítico, baseado na compreensão das dores e necessidades do cliente. Ao tomar decisões importantes em cada entrega, foi necessário analisar criticamente o impacto das soluções propostas, levando em consideração diretamente as necessidades do cliente.
+
+<b>Foco:</b>
+
+Com a equipe reduzida, aprendi a priorizar e concentrar minha energia nas tarefas mais cruciais para o projeto. A falta de recursos exigiu um foco intenso nas prioridades do projeto, otimizando o tempo e os esforços dedicados a cada tarefa. Essa habilidade de manter o foco permitiu que mesmo com um grupo menor de integrantes, pudéssemos avançar de maneira eficiente, maximizando o impacto das nossas ações e entregas.
 
 <br/><br/>
 
@@ -605,21 +632,27 @@ class GoogleService:
 
 </br>
 
-### Aprendizado efetivo HS
-
-#### Soft-Skills
-Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe com o auxílio do Jira software, algumas skills desenvolvidas foram:
-
- - Tomada de decição crítica: durante o projeto, um dos desenvolvedores acabou sendo desligado do grupo devido a falta de entregas.
- - Organização e comunicação: aprendi a organizar de forma mais efetiva e questionar a equipe quanto ao prazo das tarefas.
- - Liderança e motivação: Aprendi sobre liderar a equipe trabalhando junto e motivando os demais desenvolvedores.
-
-#### Hard-Skills
+### Hard-Skills
 Um ponto focal no projeto era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
 
  - Serviços básicos AWS: sei fazer com autonomia;
  - Autenticação em APIs com OAuth2.0: sei fazer com autonomia;
  - Programação paralela em python: sei fazer com autonomia;
+
+### Soft-Skills
+Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe com o auxílio do Jira software, algumas skills desenvolvidas foram:
+
+<b>Tomada de decisão crítica:</b>
+
+Assumir a função de Scrum Master (SM) durante o projeto me expôs à necessidade de tomar decisões críticas. Em uma situação específica, um membro da equipe foi desligado devido à falta de entregas. Esse contexto demandou ação imediata e a tomada de decisão crítica para resolver a situação. O processo envolveu análise cuidadosa das circunstâncias e impactos, reforçando a importância de decisões assertivas para manter o ritmo e a eficácia do projeto.
+
+<b>Organização e comunicação:</b>
+
+O uso do software Jira para o acompanhamento da equipe fortaleceu minhas habilidades de organização. Através dessa ferramenta, aprendi a organizar de maneira mais eficaz as tarefas e a acompanhar o progresso de cada membro da equipe. Além disso, aprimorei a comunicação ao questionar a equipe sobre o andamento das tarefas e prazos. 
+
+<b>Liderança e motivação:</b>
+
+A oportunidade de atuar como Scrum Master me permitiu explorar e desenvolver minhas habilidades de liderança e motivação. Trabalhando em estreita colaboração com a equipe, busquei liderar pelo exemplo, inspirando e motivando os demais desenvolvedores.
 
 <br/><br/>
 
@@ -776,8 +809,16 @@ Nesse projeto tive bastante contato com ferramentas de tratamento de dados com p
 #### Soft-Skills
 Nesse projeto, devido ao desconhecimento da equipe sobre dados e ferramentas geográficas, desenvolvi algumas habilidades como:
 
- - Autonomia: Tomei decições sozinho devido ao meu conhecimento
- - Proatividade: Adiantei diversas pesquisas e tarefas para a solução
- - Trabalho em equipe e comunicação: Ajudei alguns colegas a desenvolverem suas soluções. 
+<b>Trabalho em equipe e comunicação:</b>
 
-<br/><br/>
+Reconhecendo a necessidade de apoio na equipe, ofereci ajuda e orientação a colegas que enfrentavam desafios semelhantes. Essa colaboração foi fundamental para promover um ambiente de trabalho colaborativo. Além disso, aprimorei minhas habilidades de comunicação ao compartilhar conhecimentos e auxiliar outros membros da equipe no desenvolvimento de suas soluções. Esse processo fortaleceu o trabalho em equipe e contribuiu para o crescimento coletivo do grupo.
+
+<b>Autonomia:</b>
+
+O desconhecimento da equipe sobre dados e ferramentas geográficas me colocou em uma posição em que precisei tomar decisões de forma independente, fundamentadas em meu conhecimento prévio. A autonomia foi essencial para superar os desafios, permitindo-me agir com segurança e eficácia na resolução de problemas.
+
+<b>Proatividade:</b>
+
+Para preencher a lacuna de conhecimento na equipe, adiantei várias pesquisas e tarefas relacionadas ao uso de dados e ferramentas geográficas. Essa iniciativa proativa foi crucial para agilizar o processo de encontrar soluções e garantir que a equipe estivesse melhor preparada para lidar com esses aspectos, contribuindo assim para o progresso mais rápido do projeto.
+
+
