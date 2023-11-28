@@ -33,7 +33,7 @@ Desenvolver uma aplicação mobile com App Inventor que controle de forma remota
 <br/>
 
 ### Contribuições Pessoais
-Trabalhei em todos os processos de desenvolvimento, entre elas se destacam:
+Trabalhei em todos os processos de desenvolvimento, se destacam:
 
 <details><summary>Comunicação do módulo ESP8266 com o Realtime Database</summary>
 
@@ -81,7 +81,7 @@ Trabalhei em todos os processos de desenvolvimento, entre elas se destacam:
 <br/>
 
 ### Hard-Skills
-Durante o projeto pude aprender como funciona uma requisição HTTP, já que trabalhei diretamente com a comunicação entre o módulo ESP 8266 e o Realtime database, essa experiência me proporcionou observar como serviços web funcionam.
+Durante o projeto pude aprender como funciona uma requisição HTTP, já que trabalhei diretamente com a comunicação entre o módulo ESP 8266 e o Realtime database, a experiência me proporcionou observar como serviços web funcionam.
 
 Também aprendi muito sobre circuitos eletrônicos, principalmente conceitos de elétrica (potência, resistência, etc.) aplicados na prática com o uso da rede elétrica residencial alimentando o circuito de lâmpadas e com a criação da fonte de alimentação com uma fonte de computador.  
 
@@ -115,7 +115,7 @@ IACIT
 ##### *Figura 02. IACIT*
 
 ### Visão do Projeto
-Desenvolver um ERP para administrar motoristas, veículos e suas respectivas jornadas, além disso, crias funcionalidades para controle de atividades financeiras relacionadas as viagens feitas.
+ERP para administrar motoristas, veículos e suas respectivas jornadas, além disso, crias funcionalidades para controle de atividades financeiras relacionadas as viagens feitas.
 <br/>
 ### Tecnologias adotadas na solução
 <details><summary>React</summary>
@@ -261,7 +261,7 @@ MidAll
 ##### *Figura 03. MidAll*
 
 ### Visão do Projeto
-Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoções são feitas de forma flexível e de rápida atualização no sistema. As regras de promoções são cadastradas e posteriormente aplicadas no momento em que os itens são adicionados ao carrinho. Atualmente implementamos e apresentaremos o cadastro dos produtos em várias promoções no servidor/ banco de dados, utilizando operadores lógicos para criar diferentes mecânicas de promoções, o desconto é aplicado na sacola de compra e possui uma visualização dedicada para conferência e escolha de possíveis promoções. Além disso, há a autonomia fornecida ao usuário para editar, remover, arquivar ou desarquivar seus produtos e para editar, deletar, interromper ou ativar promoções e da visualização prática e intuitiva dos produtos e promoções cadastradas através da listagem que possui um filtro para que seja possível diferenciar quais os status de produtos e promoções.
+Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoções são feitas de forma flexível e de rápida atualização no sistema. As regras de promoções são cadastradas e posteriormente aplicadas no momento em que os itens são adicionados ao carrinho. Além disso, há a autonomia fornecida ao usuário para editar, remover, arquivar ou desarquivar seus produtos e para editar, deletar, interromper ou ativar promoções e da visualização prática e intuitiva dos produtos e promoções cadastradas através da listagem que possui um filtro para que seja possível diferenciar quais os status de produtos e promoções.
 <br/>
 
 ### Tecnologias adotadas na solução
@@ -272,7 +272,7 @@ Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoçõ
 </details>
 <details><summary>Spring Boot</summary>
 
- > Spring Boot é uma estrutura da Web Java baseada em microsserviços de código aberto oferecida pela Spring, especialmente útil para engenheiros de software que desenvolvem aplicativos da Web e microsserviços.<br/>Foi usado para desenvolver uma API e implementar regras de negócio da aplicação
+ > Spring Boot é uma estrutura da Web Java baseada em microsserviços de código aberto oferecida pela Spring, especialmente útil para engenheiros de software que desenvolvem aplicativos da Web e microsserviços.<br/>Foi usado para desenvolver uma API e implementar regras de negócio da aplicação.
 
 </details>
 <details><summary>OracleBD</summary>
@@ -283,7 +283,7 @@ Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoçõ
 <br/>
 
 ### Contribuições Pessoais
-Em um primeiro momento trabalhei nos templates da aplicação usando Javascript e JQuery. Minha outra grande contribuição foi na hora de aplicar as promoções de forma efetiva nas compras
+Em um primeiro momento trabalhei nos templates da aplicação usando Javascript e JQuery. Minha outra grande contribuição foi aplicar as promoções de forma efetiva nas compras.
 <details><summary>Páginas dinâmicas com JS e JQuery</summary>
 
  > Para uma boa experiência do usuário, as telas foram pensadas de forma que atendenssem suas necessidades, exibindo somente o que é necessário e com poucos clicks
@@ -345,14 +345,14 @@ if(condicao.contains("QuantidadeTotal")){
   engine.eval("QuantidadeTotal="+quantidade);
 }
  ```
- > O código acima cria variáveis de forma dinâmica dentro do script em JS que será executado no Engine, nesse caso as váriáveis que contém a quantidade de produtos comprados, o valor dos produtos comprados, o total da compra e a quantidade total estão sendo setadas. 
+ > O código acima cria variáveis de forma dinâmica dentro do script em JS que será executado no Engine, as váriáveis que contém a quantidade de produtos comprados, o valor dos produtos comprados, o total da compra e a quantidade total estão sendo setadas. 
 
 </details>
 
 <br/>
 
 ### Hard-Skills
-Nesse projeto aprendi sobre design UI e UX, o desafio de criar uma ferramenta server side fez com que todo o "frontend" fosse criado com HTML, CSS, Javascript e JQuery. Como os inputs do usuário final precisavam ser dinâmicos, aprendi muito sobre eventos em js e sobre como a árvore de elementos DOM funciona e suas propriedades.
+Nesse projeto aprendi sobre design UI e UX, o desafio de criar uma ferramenta server side, fez com que todo o "frontend" fosse criado com HTML, CSS, Javascript e JQuery. Como os inputs do usuário final precisavam ser dinâmicos, aprendi muito sobre eventos em js e sobre como a árvore de elementos DOM funciona e suas propriedades.
 
 Em relação ao backend, o grande desafio foi o banco de dados Oracle em um container Docker, ja que era meu primeiro contato coma ferramenta. Além disso foi o primeiro projeto que aprendi todo o conceito e caso de uso de DTO e sobre Script Engine para execução de scripts dentro do Java.
 
@@ -388,13 +388,9 @@ Subiter
 ##### *Figura 04. Subiter*
 
 ### Visão do Projeto
-Sistema ERP que visa gerenciar e controlar dados, afim de reduzir custos, facilitar tomadas de decisão, otimizar o tempo de atendimento de chamados e aprimorar o solucionamento destes. É composta por níveis de usuários, onde o administrador terá controle sobre todas as funcionalidades existentes, dentre elas o cadastro, edição e exclusão de outros usuários; o suporte ficará responsável pelo CRUD de falhas e soluções genéricas e CRUD de equipamentos; o cliente trará o problema para o suporte e, este ficará responsável por gerenciar o chamado e resolvê-los.
+Este projeto consiste em um ERP que visa gerenciar e controlar dados, afim de reduzir custos, facilitar tomadas de decisão, otimizar o tempo de atendimento de chamados e aprimorar o solucionamento destes. É composta por níveis de usuários, onde o administrador terá controle sobre todas as funcionalidades existentes, dentre elas o cadastro, edição e exclusão de outros usuários; o suporte ficará responsável pelo CRUD de falhas e soluções genéricas e CRUD de equipamentos; o cliente trará o problema para o suporte e, este ficará responsável por gerenciar o chamado e resolvê-los.
 
-A MCS (Management and Control System) trouxe de uma forma fácil e rápida o mais importante: o mapeamento gráfico de anomalias nas silhuetas.
-
-O Mapemamento de anomalias consiste em durante ou após uma inspeção, o suporte conseguirá fazer o upload da silhueta e adicionar as falhas (específicas do chamado) encontradas em formas e tamanhos diferentes para uma melhor identificação da posição e tamanho, facilitando na identificação de quantidade e quais materiais serão utilizados para a solução dessas falhas e também no cálculo do orçamento.
-
-Sua interface web facilita a gestão de dados e dá autonomia aos usuários dessa aplicação para que possam atuar com desenvoltura dentro das permissões concedidas.
+A MCS (Management and Control System) trouxe de uma forma fácil e rápida o mais importante: o mapeamento gráfico de anomalias nas silhuetas, que consiste em uma relatório gráfica com detalhes da posição de possíveis falhas ou deformidades na superfície do componente mapeado.
 <br/>
 
 ### Tecnologias adotadas na solução
@@ -416,9 +412,9 @@ Sua interface web facilita a gestão de dados e dá autonomia aos usuários dess
 <br/>
 
 ### Contribuições Pessoais
-Nesse projeto atuei como PO, porém devido ao tamanho reduzido da equipe, acabei desenvolvendo features no backend e frontend, o maior problema foi desenvolver as telas dinâmicas e o uso da biblioteca konva para desenhos em canvas, além disso, o uso de vuex para persistencia de dados.
+Nesse projeto atuei como PO, porém devido ao tamanho reduzido da equipe, acabei desenvolvendo features no backend e frontend. O grande problema foi desenvolver as telas dinâmicas e o uso da biblioteca konva para desenhos em canvas, além disso, o uso de vuex para persistencia de dados.
 
-<details><summary>Fazer o levantamento de requisitos do cliente</summary>
+<details><summary>Levantamento de requisitos do cliente</summary>
 
  > Como PO, tive a função de conversar com o cliente e levantar as necessidades e requisitos para a solução, nesse projeto em específico houve algumas mudanças de escopo, forçando o contato recorrente e entendimento de todas as regras de negócio, além disso, organizar tudo de forma priorizada para que o SCRUM MASTER pudesse organizar as tarefas.
   
@@ -485,7 +481,7 @@ spring.jpa.hibernate.ddl-auto=update
 </br>
 
 ### Hard-Skills
-Com o desenvolvimento da solução, um dos principais desafios foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem e a documentação é escassa e com vocabulário mais complicado, meu conhecimento prévio de linux foi essencial para conseguir configurar o banco de dados e o servidor linux para a aplicação JAVA.
+Com o desenvolvimento da solução, um dos principais desafios foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem, principalmente com o Oracle cloud, que possui documentação escassa. Além disso, outro conhecimento adiquirido foi a autenticação TLS no Autonomous DB da Oracle usando a wallet.
 
  - Configurar banco de dados Oracle na Oracle cloud: sei fazer com autonomia;
  - Conversa com cliente: sei fazer com autonomia;
@@ -633,14 +629,14 @@ class GoogleService:
 </br>
 
 ### Hard-Skills
-Um ponto focal no projeto era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
+Um dos requisitos mais importantes era desenvolver uma solução destribuída e escalável, afirmando conhecimentos de design pattern e arquitetura de código. Além disso, foi o primeiro projeto com o uso de uma cloud (AWS), que permitiu novos aprendizados sobre billing e recursos em nuvem.
 
  - Serviços básicos AWS: sei fazer com autonomia;
  - Autenticação em APIs com OAuth2.0: sei fazer com autonomia;
  - Programação paralela em python: sei fazer com autonomia;
 
 ### Soft-Skills
-Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe com o auxílio do Jira software, algumas skills desenvolvidas foram:
+Durante esse projeto exerci a função de SM, reforçando atividades de organização e acompanhamento da equipe, com o auxílio do Jira software, algumas skills desenvolvidas foram:
 
 <b>Tomada de decisão crítica:</b>
 
@@ -668,7 +664,7 @@ Visiona
 ##### *Figura 05. Visiona*
 
 ### Visão do Projeto
-O POP é uma plataforma de monitoramento das atividades agropecuárias cadastradas no Proagro, o projeto conta com ferramentas de machine learning para previsão de indices NDVI e integração com ferramentas meteorológicas.
+O POP é uma plataforma de monitoramento das atividades agropecuárias cadastradas no Proagro, com ferramentas de machine learning para previsão de indices NDVI e integração com ferramentas meteorológicas.
 <br/>
 
 ### Tecnologias adotadas na solução
