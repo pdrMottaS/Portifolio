@@ -1,6 +1,26 @@
 # Pedro Motta Silva
 
+Olá, me chamo Pedro Motta Silva,
 
+Tenho 21 anos, sou estudante de Banco de Dados pela FATEC Prof. Jessen Vidal no período noturno.
+
+Trabalho na empresa Dom Rock, desenvolvendo pipelines de dados
+
+<img src="https://github.com/beamedeiros/portfolio/assets/58821700/cbe68f55-2c2f-46c4-a8b6-7f71d86c189d"/>
+
+## Principais Conhecimentos
+
+### Python
+Tive meu primeiro contato com python na faculdade, durante a matéria de algoritimos. 
+Em seguida comecei os estudos de frameworks web como django e flask e mais recentemente frameworks e libs relacionadas a pipeline e ciência de dados.
+
+### Java
+Durante a faculdade, um dos principais requisitos era programação em Java devido a disciplinas como POO e testes de software.
+Estudo a versão 11 com foco em desenvolvimentos de serviços web com Spring Boot e todo seu ecossitema.
+
+# Aprendizado por projeto integrador
+
+Durante a faculdade, tive a oportunidade de desenvolver 6 soluções com empresas parceiras, uma experiência para consolidar os conhecimentos adiquiridos em sala de aula.
 
 ## API 1º Semestre: Smart-Key
 <br/>
