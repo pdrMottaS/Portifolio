@@ -29,7 +29,6 @@ Durante a faculdade, tive a oportunidade de desenvolver 6 soluções com empresa
 Fatec Prof. Jessen Vidal (proposta realizada pelo docente responsável pela disciplina que ordenou o projeto)
 
 <img src="https://user-images.githubusercontent.com/74321890/221617740-afbc3809-af92-43e8-bc11-698eeffb4bf4.png" alt="drawing" width="300" height="200"/>
-##### *Figura 01. FATEC*
 
 ### Visão do Projeto
 Desenvolver uma aplicação mobile com App Inventor que controle de forma remota Um sistema de automação residencial usando Arduino. O objetivo é trazer conforto para o usuário com tecnologias de baixo custo.
@@ -132,7 +131,6 @@ Minha dedicação à entrega de resultados foi evidenciada pela minha capacidade
 IACIT
 
 <img src="https://user-images.githubusercontent.com/58821700/228378287-21d8de63-e356-442e-b430-f408a92511ca.png" alt="drawing" width="300" height="200"/>
-##### *Figura 02. IACIT*
 
 ### Visão do Projeto
 ERP para administrar motoristas, veículos e suas respectivas jornadas, além disso, crias funcionalidades para controle de atividades financeiras relacionadas as viagens feitas.
@@ -278,7 +276,8 @@ Ao longo do projeto, percebi a importância de antecipar as necessidades futuras
 MidAll
 
 <img src="https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png" alt="drawing" width="300" height="200"/>
-##### *Figura 03. MidAll*
+
+[Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZsrdWoo8YF8GLvADBIIRMPV&si=n4uhskE55-6nWMMO)
 
 ### Visão do Projeto
 Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoções são feitas de forma flexível e de rápida atualização no sistema. As regras de promoções são cadastradas e posteriormente aplicadas no momento em que os itens são adicionados ao carrinho. Além disso, há a autonomia fornecida ao usuário para editar, remover, arquivar ou desarquivar seus produtos e para editar, deletar, interromper ou ativar promoções e da visualização prática e intuitiva dos produtos e promoções cadastradas através da listagem que possui um filtro para que seja possível diferenciar quais os status de produtos e promoções.
@@ -405,7 +404,7 @@ Subiter
 
 <img src="https://github.com/pdrMottaS/Portifolio/assets/58821700/ea6a22bf-e487-4c7b-be9a-a62ba65377ef" alt="drawing" width="300" height="200"/>
 
-##### *Figura 04. Subiter*
+[Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZv85QQ4B3ExV93PQVVf8n2o&si=-y_WuawFHGOfJam2)
 
 ### Visão do Projeto
 Este projeto consiste em um ERP que visa gerenciar e controlar dados, afim de reduzir custos, facilitar tomadas de decisão, otimizar o tempo de atendimento de chamados e aprimorar o solucionamento destes. É composta por níveis de usuários, onde o administrador terá controle sobre todas as funcionalidades existentes, dentre elas o cadastro, edição e exclusão de outros usuários; o suporte ficará responsável pelo CRUD de falhas e soluções genéricas e CRUD de equipamentos; o cliente trará o problema para o suporte e, este ficará responsável por gerenciar o chamado e resolvê-los.
@@ -504,7 +503,7 @@ spring.jpa.hibernate.ddl-auto=update
 Com o desenvolvimento da solução, um dos principais desafios foi o uso do Oracle Cloud, já que foi minha primeira vez usando um serviço de computação em nuvem, principalmente com o Oracle cloud, que possui documentação escassa. Além disso, outro conhecimento adiquirido foi a autenticação TLS no Autonomous DB da Oracle usando a wallet.
 
  - Configurar banco de dados Oracle na Oracle cloud: sei fazer com autonomia;
- - Conversa com cliente: sei fazer com autonomia;
+ - Integração e uso do Slack: sei fazer com autonomia;
  - Criação de servidor linux na Oracle cloud: sei fazer com autonomia;
 
 ### Soft-Skills
@@ -530,10 +529,9 @@ Com a equipe reduzida, aprendi a priorizar e concentrar minha energia nas tarefa
 ### Parceiro Acadêmico
 Mid-All
 
-
 <img src="https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png" alt="drawing" width="300" height="200"/>
 
-##### *Figura 03. MidAll*
+[Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZsvHbaHWKrQ3z0l9l2Uo_f0&si=Q0-WfJOnm9BgSIVv)
 
 ### Visão do Projeto
 O software Cloud-In é um aplicativo orquestrador para transferência automática de arquivos entre sistemas de armazenamento online. Através de sua interface minimalista e interativa, o usuário pode cadastrar suas credenciais e configurar as transferências conforme sua necessidade, iniciando a jornada de download e upload entre os storages.
@@ -678,10 +676,9 @@ A oportunidade de atuar como Scrum Master me permitiu explorar e desenvolver min
 ### Parceiro Acadêmico
 Visiona
 
-
 <img src="https://github.com/pdrMottaS/Portifolio/assets/58821700/762c378d-3f43-4cc6-9979-795ab1b90d23" alt="drawing" width="300" height="200"/>
 
-##### *Figura 05. Visiona*
+[Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZvDd8dOXBFlEHLtTTWCrRLk&si=LFh9B4VnHg5HSjtt)
 
 ### Visão do Projeto
 O POP é uma plataforma de monitoramento das atividades agropecuárias cadastradas no Proagro, com ferramentas de machine learning para previsão de indices NDVI e integração com ferramentas meteorológicas.
