@@ -18,6 +18,12 @@ Em seguida comecei os estudos de frameworks web como django e flask e mais recen
 Durante a faculdade, um dos principais requisitos era programação em Java devido a disciplinas como POO e testes de software.
 Estudo a versão 11 com foco em desenvolvimentos de serviços web com Spring Boot e todo seu ecossitema.
 
+## Contatos
+
+ - [Linkedin](https://www.linkedin.com/in/pedro-motta-7471021a9/)
+ - [Github](https://github.com/pdrMottaS)
+ - [Kaggle](https://www.kaggle.com/pdrmottas)
+
 # Aprendizado por projeto integrador
 
 Durante a faculdade, tive a oportunidade de desenvolver 6 soluções com empresas parceiras, uma experiência para consolidar os conhecimentos adiquiridos em sala de aula.
@@ -29,6 +35,9 @@ Durante a faculdade, tive a oportunidade de desenvolver 6 soluções com empresa
 Fatec Prof. Jessen Vidal (proposta realizada pelo docente responsável pela disciplina que ordenou o projeto)
 
 <img src="https://user-images.githubusercontent.com/74321890/221617740-afbc3809-af92-43e8-bc11-698eeffb4bf4.png" alt="drawing" width="300" height="200"/>
+
+### Repositório
+[Smart-Key](https://github.com/Vitoglok/Aplicativo-Smart-Key)
 
 ### Visão do Projeto
 Desenvolver uma aplicação mobile com App Inventor que controle de forma remota Um sistema de automação residencial usando Arduino. O objetivo é trazer conforto para o usuário com tecnologias de baixo custo.
@@ -131,6 +140,9 @@ Minha dedicação à entrega de resultados foi evidenciada pela minha capacidade
 IACIT
 
 <img src="https://user-images.githubusercontent.com/58821700/228378287-21d8de63-e356-442e-b430-f408a92511ca.png" alt="drawing" width="300" height="200"/>
+
+### Repositório
+[ERP JornadaDeMotoristas](https://github.com/pdrMottaS/PI-JornadaDeMotoristas)
 
 ### Visão do Projeto
 ERP para administrar motoristas, veículos e suas respectivas jornadas, além disso, crias funcionalidades para controle de atividades financeiras relacionadas as viagens feitas.
@@ -279,6 +291,9 @@ MidAll
 
 [Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZsrdWoo8YF8GLvADBIIRMPV&si=n4uhskE55-6nWMMO)
 
+### Repositório
+[DescontOn](https://github.com/DolphinDatabase/DescontOn)
+
 ### Visão do Projeto
 Ferramenta para criar promoções de E-commerce, onde as mecânicas de promoções são feitas de forma flexível e de rápida atualização no sistema. As regras de promoções são cadastradas e posteriormente aplicadas no momento em que os itens são adicionados ao carrinho. Além disso, há a autonomia fornecida ao usuário para editar, remover, arquivar ou desarquivar seus produtos e para editar, deletar, interromper ou ativar promoções e da visualização prática e intuitiva dos produtos e promoções cadastradas através da listagem que possui um filtro para que seja possível diferenciar quais os status de produtos e promoções.
 <br/>
@@ -406,6 +421,9 @@ Subiter
 
 [Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZv85QQ4B3ExV93PQVVf8n2o&si=-y_WuawFHGOfJam2)
 
+### Repositório
+[MCS](https://github.com/DolphinDatabase/MCS)
+
 ### Visão do Projeto
 Este projeto consiste em um ERP que visa gerenciar e controlar dados, afim de reduzir custos, facilitar tomadas de decisão, otimizar o tempo de atendimento de chamados e aprimorar o solucionamento destes. É composta por níveis de usuários, onde o administrador terá controle sobre todas as funcionalidades existentes, dentre elas o cadastro, edição e exclusão de outros usuários; o suporte ficará responsável pelo CRUD de falhas e soluções genéricas e CRUD de equipamentos; o cliente trará o problema para o suporte e, este ficará responsável por gerenciar o chamado e resolvê-los.
 
@@ -532,6 +550,9 @@ Mid-All
 <img src="https://user-images.githubusercontent.com/58821700/228382217-c1300fbf-09db-4bd2-a380-feb260988b03.png" alt="drawing" width="300" height="200"/>
 
 [Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZsvHbaHWKrQ3z0l9l2Uo_f0&si=Q0-WfJOnm9BgSIVv)
+
+### Repositório
+[Cloud-In](https://github.com/DolphinDatabase/Cloud-In)
 
 ### Visão do Projeto
 O software Cloud-In é um aplicativo orquestrador para transferência automática de arquivos entre sistemas de armazenamento online. Através de sua interface minimalista e interativa, o usuário pode cadastrar suas credenciais e configurar as transferências conforme sua necessidade, iniciando a jornada de download e upload entre os storages.
@@ -679,6 +700,9 @@ Visiona
 <img src="https://github.com/pdrMottaS/Portifolio/assets/58821700/762c378d-3f43-4cc6-9979-795ab1b90d23" alt="drawing" width="300" height="200"/>
 
 [Vídeo de apresentação](https://youtube.com/playlist?list=PLUOBqJKbljZvDd8dOXBFlEHLtTTWCrRLk&si=LFh9B4VnHg5HSjtt)
+
+### Repositório
+[POP](https://github.com/DolphinDatabase/POP)
 
 ### Visão do Projeto
 O POP é uma plataforma de monitoramento das atividades agropecuárias cadastradas no Proagro, com ferramentas de machine learning para previsão de indices NDVI e integração com ferramentas meteorológicas.
