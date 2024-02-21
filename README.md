@@ -2,7 +2,7 @@
 
 Olá, me chamo Pedro Motta Silva,
 
-Tenho 21 anos, sou estudante de Banco de Dados pela FATEC Prof. Jessen Vidal no período noturno.
+Tenho 21 anos, sou formado no curso de Banco de Dados pela FATEC Prof. Jessen Vidal no período noturno.
 
 Trabalho na empresa Dom Rock, desenvolvendo pipelines de dados
 
